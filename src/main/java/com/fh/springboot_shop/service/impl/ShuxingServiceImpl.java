@@ -25,4 +25,12 @@ public class ShuxingServiceImpl implements ShuxingService {
         map.put("list",shuxingList);
         return map;
     }
+
+    @Override
+    public void add(Shuxing shuxing) {
+        shuxing.setAuthor("admin");
+        shuxingDao.addShuxing(shuxing);
+    }
+
+
 }

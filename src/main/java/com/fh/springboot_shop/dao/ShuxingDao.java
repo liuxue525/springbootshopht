@@ -2,6 +2,7 @@ package com.fh.springboot_shop.dao;
 
 import com.fh.springboot_shop.entity.po.Shuxing;
 import com.fh.springboot_shop.entity.vo.ShuxingParam;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -19,6 +20,7 @@ public interface ShuxingDao {
 
 
 
-
-
+    @Insert("insert into shop_shuxing (name,nameChina,typeId,type,isSKU,createDate,updateDate,author)" +
+            "values (#{name},#{nameChina},#{typeId},#{type},#{isSKU},SYSDATE(),SYSDATE(),#{author})")
+    void addShuxing(Shuxing shuxing);
 }

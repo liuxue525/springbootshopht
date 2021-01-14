@@ -26,4 +26,8 @@
         </if>
     </select>
 
+    <!--<insert id="addShuxing">
+        insert into shop_shuxing (name,nameChina,typeId,type,isSKU,createDate,updateDate,author) values (#{name},#{nameChina},#{typeId},#{type},#{isSKU},SYSDATE(),SYSDATE(),#{}
+    </insert>-->
+
 </mapper>
