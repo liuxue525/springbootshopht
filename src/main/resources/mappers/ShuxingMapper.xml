@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fh.springboot_shop.dao.ShuxingDao">
+    <select id="queryShuxingData" resultType="com.fh.springboot_shop.entity.po.Shuxing">
+        select * from shop_shuxing where 1=1
+        <if test="startDate!=null">
+            and createDate>=#{startDate}
+        </if>
+        <if test="endDate!=null">
+            and createDate &lt; = #{endDate}
+        </if>
+        limit ${size*(page-1)},#{size}
+
+    </select>
+
+    <select id="selectCount" resultType="java.lang.Integer">
+        select count(*) from shop_shuxing where 1=1
+        <if test="startDate!=null">
+            and createDate>=#{startDate}
+        </if>
+        <if test="endDate!=null">
+            and createDate &lt; = #{endDate}
+        </if>
+    </select>
+
+</mapper>

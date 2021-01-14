@@ -24,6 +24,7 @@ import java.util.UUID;
 public class PinpaiController {
 
     @Autowired
+
     private PinpaiService pinpaiService;
 
     @GetMapping("selectPinpai")
