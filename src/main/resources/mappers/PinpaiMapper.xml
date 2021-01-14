@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fh.springboot_shop.dao.PinpaiDao">
+
+    <select id="selectCount" resultType="java.lang.Long">
+        select count(*) from shop_pinpai where 4=4
+        <if test="name!=null and name!=''">
+            and name=#{name}
+        </if>
+
+    </select>
+
+    <select id="selectPinpaiByPage" resultType="com.fh.springboot_shop.entity.po.Pinpai">
+        select * from shop_pinpai where 4=4
+        <if test="name!=null and name!=''">
+            and name=#{name}
+        </if>
+
+        limit ${size*(page-1)},#{size}
+    </select>
+
+    <insert id="add">
+        insert into shop_pinpai (name,bandE,imgPath,bandDesc,ord,isDel,createDate,updateDate,author)
+        values (#{name},#{bandE},#{imgPath},#{bandDesc},#{ord},#{isDel},#{createDate},#{updateDate},#{author})
+    </insert>
+
+    <select id="selectPinpaiById" resultType="com.fh.springboot_shop.entity.po.Pinpai">
+        select * from shop_pinpai where id=#{id}
+    </select>
+
+    <update id="update">
+        update shop_pinpai set name=#{name},bandE=#{bandE},imgPath=#{imgPath},bandDesc=#{bandDesc},ord=#{ord},isDel=#{isDel},updateDate=SYSDATE()
+        where id=#{id}
+    </update>
+</mapper>
