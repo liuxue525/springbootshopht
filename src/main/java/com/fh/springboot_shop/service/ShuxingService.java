@@ -10,4 +10,6 @@ public interface ShuxingService {
     Map getData(ShuxingParam param);
 
     void add(Shuxing shuxing);
+
+    void update(Shuxing shuxing);
 }

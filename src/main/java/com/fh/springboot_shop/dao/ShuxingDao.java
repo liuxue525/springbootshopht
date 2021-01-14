@@ -5,6 +5,7 @@ import com.fh.springboot_shop.entity.vo.ShuxingParam;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -23,4 +24,8 @@ public interface ShuxingDao {
     @Insert("insert into shop_shuxing (name,nameChina,typeId,type,isSKU,createDate,updateDate,author)" +
             "values (#{name},#{nameChina},#{typeId},#{type},#{isSKU},SYSDATE(),SYSDATE(),#{author})")
     void addShuxing(Shuxing shuxing);
+
+    @Update("update shop_shuxing set name=#{name},nameChina=#{nameChina},typeId=#{typeId},type=#{type},isSKU=#{isSKU}," +
+            "createDate=SYSDATE(),updateDate=SYSDATE(),author=#{author} where id=#{id}")
+    void update(Shuxing shuxing);
 }

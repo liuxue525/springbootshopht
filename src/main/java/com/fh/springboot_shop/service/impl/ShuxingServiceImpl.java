@@ -32,5 +32,12 @@ public class ShuxingServiceImpl implements ShuxingService {
         shuxingDao.addShuxing(shuxing);
     }
 
+    @Override
+    public void update(Shuxing shuxing) {
+
+        shuxing.setAuthor("admin");
+        shuxingDao.update(shuxing);
+    }
+
 
 }

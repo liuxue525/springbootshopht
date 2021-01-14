@@ -30,4 +30,10 @@ public class ShuxingController {
         shuxingService.add(shuxing);
         return ResultData.success("");
     }
+
+    @PostMapping("update")
+    public ResultData update(Shuxing shuxing){
+        shuxingService.update(shuxing);
+        return ResultData.success("");
+    }
 }
