@@ -36,4 +36,10 @@ public class ShuxingController {
         shuxingService.update(shuxing);
         return ResultData.success("");
     }
+
+    @PostMapping("del")
+    public ResultData del(Shuxing shuxing){
+        shuxingService.del(shuxing);
+        return ResultData.success("");
+    }
 }

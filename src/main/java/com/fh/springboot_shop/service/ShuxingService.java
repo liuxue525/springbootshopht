@@ -12,4 +12,6 @@ public interface ShuxingService {
     void add(Shuxing shuxing);
 
     void update(Shuxing shuxing);
+
+    void del(Shuxing shuxing);
 }

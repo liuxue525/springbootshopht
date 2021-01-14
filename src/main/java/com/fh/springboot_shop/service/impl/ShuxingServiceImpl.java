@@ -39,5 +39,12 @@ public class ShuxingServiceImpl implements ShuxingService {
         shuxingDao.update(shuxing);
     }
 
+    @Override
+    public void del(Shuxing shuxing) {
+        shuxing.setId(shuxing.getId());
+        shuxing.setIsDel(1);
+        shuxingDao.del(shuxing);
+    }
+
 
 }

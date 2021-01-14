@@ -28,4 +28,7 @@ public interface ShuxingDao {
     @Update("update shop_shuxing set name=#{name},nameChina=#{nameChina},typeId=#{typeId},type=#{type},isSKU=#{isSKU}," +
             "createDate=SYSDATE(),updateDate=SYSDATE(),author=#{author} where id=#{id}")
     void update(Shuxing shuxing);
+
+    @Update("update shop_shuxing set isDel=#{isDel} where id=#{id}")
+    void del(Shuxing shuxing);
 }
