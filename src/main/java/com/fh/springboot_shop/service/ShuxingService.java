@@ -14,4 +14,6 @@ public interface ShuxingService {
     void update(Shuxing shuxing);
 
     void del(Shuxing shuxing);
+
+    String selectTypeNameById(Integer typeId);
 }

@@ -31,4 +31,8 @@ public interface ShuxingDao {
 
     @Update("update shop_shuxing set isDel=#{isDel} where id=#{id}")
     void del(Shuxing shuxing);
+
+    @Select("SELECT distinct t.name FROM shop_type t LEFT JOIN shop_shuxing s ON t.id = s.typeId\n" +
+            "where s.typeId=#{typeId}")
+    String selectTypeNameById(Integer typeId);
 }

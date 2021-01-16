@@ -46,5 +46,10 @@ public class ShuxingServiceImpl implements ShuxingService {
         shuxingDao.del(shuxing);
     }
 
+    @Override
+    public String selectTypeNameById(Integer typeId) {
+        return shuxingDao.selectTypeNameById(typeId);
+    }
+
 
 }

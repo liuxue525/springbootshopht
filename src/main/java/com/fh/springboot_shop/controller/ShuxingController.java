@@ -40,4 +40,10 @@ public class ShuxingController {
         shuxingService.del(shuxing);
         return ResultData.success("");
     }
+
+    @GetMapping("selectTypeNameById")
+    public ResultData selectTypeNameById(Integer typeId){
+        String name=shuxingService.selectTypeNameById(typeId);
+        return  ResultData.success(name);
+    }
 }
