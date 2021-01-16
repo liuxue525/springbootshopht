@@ -6,6 +6,7 @@ import com.fh.springboot_shop.entity.vo.ResultData;
 import com.fh.springboot_shop.entity.vo.ShuxingParam;
 import com.fh.springboot_shop.service.ShuxingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.relational.core.sql.In;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -53,5 +54,11 @@ public class ShuxingController {
     public ResultData selectTypeName(){
         List<ShopType> name = shuxingService.selectTypeName();
         return ResultData.success(name);
+    }
+
+    @PostMapping("selectShuxingById")
+    public ResultData selectShuxingById(Integer id){
+        Shuxing shuxing = shuxingService.selectShuxingById(id);
+        return ResultData.success(shuxing);
     }
 }

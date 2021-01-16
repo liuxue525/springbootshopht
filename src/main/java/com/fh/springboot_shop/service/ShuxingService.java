@@ -19,4 +19,6 @@ public interface ShuxingService {
     String selectTypeNameById(Integer typeId);
 
     List<ShopType> selectTypeName();
+
+    Shuxing selectShuxingById(Integer id);
 }

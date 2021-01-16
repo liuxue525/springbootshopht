@@ -39,4 +39,7 @@ public interface ShuxingDao {
 
     @Select("SELECT distinct t.name,t.id FROM shop_type t LEFT JOIN shop_shuxing s ON t.id = s.typeId")
     List<ShopType> selectTypeName();
+
+    @Select("select * from shop_shuxing where id = #{id}")
+    Shuxing selectShuxingById(Integer id);
 }
