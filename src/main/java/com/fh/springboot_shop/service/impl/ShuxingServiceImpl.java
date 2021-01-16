@@ -1,6 +1,7 @@
 package com.fh.springboot_shop.service.impl;
 
 import com.fh.springboot_shop.dao.ShuxingDao;
+import com.fh.springboot_shop.entity.po.ShopType;
 import com.fh.springboot_shop.entity.po.Shuxing;
 import com.fh.springboot_shop.entity.vo.ShuxingParam;
 import com.fh.springboot_shop.service.ShuxingService;
@@ -49,6 +50,11 @@ public class ShuxingServiceImpl implements ShuxingService {
     @Override
     public String selectTypeNameById(Integer typeId) {
         return shuxingDao.selectTypeNameById(typeId);
+    }
+
+    @Override
+    public List<ShopType> selectTypeName() {
+        return shuxingDao.selectTypeName();
     }
 
 

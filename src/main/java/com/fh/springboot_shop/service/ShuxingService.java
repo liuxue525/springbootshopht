@@ -1,5 +1,6 @@
 package com.fh.springboot_shop.service;
 
+import com.fh.springboot_shop.entity.po.ShopType;
 import com.fh.springboot_shop.entity.po.Shuxing;
 import com.fh.springboot_shop.entity.vo.ShuxingParam;
 
@@ -16,4 +17,6 @@ public interface ShuxingService {
     void del(Shuxing shuxing);
 
     String selectTypeNameById(Integer typeId);
+
+    List<ShopType> selectTypeName();
 }

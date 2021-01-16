@@ -1,5 +1,6 @@
 package com.fh.springboot_shop.dao;
 
+import com.fh.springboot_shop.entity.po.ShopType;
 import com.fh.springboot_shop.entity.po.Shuxing;
 import com.fh.springboot_shop.entity.vo.ShuxingParam;
 import org.apache.ibatis.annotations.Insert;
@@ -35,4 +36,7 @@ public interface ShuxingDao {
     @Select("SELECT distinct t.name FROM shop_type t LEFT JOIN shop_shuxing s ON t.id = s.typeId\n" +
             "where s.typeId=#{typeId}")
     String selectTypeNameById(Integer typeId);
+
+    @Select("SELECT distinct t.name,t.id FROM shop_type t LEFT JOIN shop_shuxing s ON t.id = s.typeId")
+    List<ShopType> selectTypeName();
 }
