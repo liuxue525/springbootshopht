@@ -4,10 +4,7 @@ import com.fh.springboot_shop.entity.po.ShuxingValue;
 import com.fh.springboot_shop.entity.vo.ResultData;
 import com.fh.springboot_shop.service.ShuxingValueService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,4 +20,11 @@ public class ShuxingValueController {
         List<ShuxingValue> list =shuxingValueService.getData(attId);
         return ResultData.success(list);
     }
+
+    @PostMapping("add")
+    public ResultData add(ShuxingValue shuxingValue){
+        shuxingValueService.add(shuxingValue);
+        return ResultData.success(null);
+    }
+
 }

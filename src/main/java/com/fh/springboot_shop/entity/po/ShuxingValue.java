@@ -7,7 +7,7 @@ public class ShuxingValue {
 
     private String nameCH;
 
-    private Integer attrId;
+    private Integer attId;
 
     public Integer getId() {
         return id;
@@ -33,11 +33,11 @@ public class ShuxingValue {
         this.nameCH = nameCH;
     }
 
-    public Integer getAttrId() {
-        return attrId;
+    public Integer getAttId() {
+        return attId;
     }
 
-    public void setAttrId(Integer attrId) {
-        this.attrId = attrId;
+    public void setAttId(Integer attId) {
+        this.attId = attId;
     }
 }
