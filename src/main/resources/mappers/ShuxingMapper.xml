@@ -4,8 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.fh.springboot_shop.dao.ShuxingDao">
-    <select id="queryShuxingData" resultType="com.fh.springboot_shop.entity.po.Shuxing">
-        select * from shop_shuxing where 1=1
+    <select id="queryShuxingData" resultType="com.fh.springboot_shop.entity.vo.AttrShow">
+
+        SELECT att.id,att.nameChina as name,t.`name` as typeNames,att.isSKU,att.type
+        from shop_shuxing att LEFT JOIN shop_type t on att.typeId=t.id where 1=1
         <if test="startDate!=null">
             and createDate>=#{startDate}
         </if>
@@ -17,7 +19,8 @@
     </select>
 
     <select id="selectCount" resultType="java.lang.Integer">
-        select count(*) from shop_shuxing where 1=1
+        SELECT count(*)
+        from shop_shuxing att LEFT JOIN shop_type t on att.typeId=t.id where 1=1
         <if test="startDate!=null">
             and createDate>=#{startDate}
         </if>

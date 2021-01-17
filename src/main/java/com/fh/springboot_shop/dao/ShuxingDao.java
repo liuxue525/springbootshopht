@@ -37,7 +37,7 @@ public interface ShuxingDao {
             "where s.typeId=#{typeId}")
     String selectTypeNameById(Integer typeId);
 
-    @Select("SELECT distinct t.name,t.id FROM shop_type t LEFT JOIN shop_shuxing s ON t.id = s.typeId")
+    @Select("SELECT distinct t.name,t.id,t.pid FROM shop_type t LEFT JOIN shop_shuxing s ON t.id = s.typeId")
     List<ShopType> selectTypeName();
 
     @Select("select * from shop_shuxing where id = #{id}")

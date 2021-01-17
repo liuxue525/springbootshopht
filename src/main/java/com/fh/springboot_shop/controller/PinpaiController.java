@@ -4,6 +4,7 @@ import com.fh.springboot_shop.entity.po.Pinpai;
 import com.fh.springboot_shop.entity.vo.PinpaiParam;
 import com.fh.springboot_shop.entity.vo.ResultData;
 import com.fh.springboot_shop.service.PinpaiService;
+import com.fh.springboot_shop.utils.OssFileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -56,59 +57,14 @@ public class PinpaiController {
 
 
 
-
-
-
-
-
     @PostMapping("upload")
-    public static String saveFile(MultipartFile file, HttpServletRequest request) {
-
-        //获取项目的绝对路径
-        String realPath = request.getServletContext().getRealPath("/");
-        //指定的目录
-        String savePath=realPath;
-        //创建目录对象
-        File fileStroy=new File(savePath);
-        //判断目录是否存在
-        boolean exists = fileStroy.exists();
-        if(exists==false) {
-            //创建目录
-            fileStroy.mkdirs();
-        }
-        //文件的保存目录已经存在
-
-
-        //对上传的文件 进行重命名
-
-        //获取上传文件的名 aaa.jpg  bbb.xlsx  cccc.zip
-        String fileName = file.getOriginalFilename();
-        //起新名
-        String newName= UUID.randomUUID().toString();
-        //处理文件格式
-        String fileType=fileName.substring(fileName.lastIndexOf("."));
-        String newFileName=newName+fileType;
-        //拷贝文件
-
-        // 输入流  输出流
-
-        try {// classcast
-            InputStream is=file.getInputStream();
-            //输出流
-            FileOutputStream os=new FileOutputStream(fileStroy+"/"+newFileName);
-            //一次拷贝2kb
-            byte[] bts=new byte[1024*2];
-            //拷贝的过程
-            while(is.read(bts)!=-1) {
-                os.write(bts);
-            }
-            //拷贝完成
-            os.close();
-            is.close();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return newFileName;
+    public ResultData upload(MultipartFile file) throws IOException {
+        //处理新名称
+        String originalFilename = file.getOriginalFilename();
+        //防止中文引起的错误
+        String newName= UUID.randomUUID().toString()+originalFilename.substring(originalFilename.lastIndexOf("."));
+        //存储路径
+        newName="imgs/"+newName;
+        return ResultData.success(OssFileUtils.uploadFile(file.getInputStream(),newName));
     }
 }
