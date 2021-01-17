@@ -8,4 +8,6 @@ public interface ShuxingValueService {
     List<ShuxingValue> getData(Integer attId);
 
     void add(ShuxingValue shuxingValue);
+
+    ShuxingValue selectValueById(Integer id);
 }

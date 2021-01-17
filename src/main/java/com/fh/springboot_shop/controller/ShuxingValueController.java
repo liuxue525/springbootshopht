@@ -27,4 +27,11 @@ public class ShuxingValueController {
         return ResultData.success(null);
     }
 
+    @GetMapping("selectValueById")
+    public ResultData selectValueById(Integer id){
+        ShuxingValue s =shuxingValueService.selectValueById(id);
+        return ResultData.success(s);
+    }
+
+
 }

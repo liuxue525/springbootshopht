@@ -22,4 +22,9 @@ public class ShuxingValueServiceImpl implements ShuxingValueService {
     public void add(ShuxingValue shuxingValue) {
         shuxingValueDao.add(shuxingValue);
     }
+
+    @Override
+    public ShuxingValue selectValueById(Integer id) {
+        return shuxingValueDao.selectValueById(id);
+    }
 }
