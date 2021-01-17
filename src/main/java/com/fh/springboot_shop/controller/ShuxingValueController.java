@@ -19,8 +19,8 @@ public class ShuxingValueController {
     private ShuxingValueService shuxingValueService;
 
     @GetMapping("getData")
-    public ResultData getData(){
-        List<ShuxingValue> list =shuxingValueService.getData();
+    public ResultData getData(Integer attId){
+        List<ShuxingValue> list =shuxingValueService.getData(attId);
         return ResultData.success(list);
     }
 }

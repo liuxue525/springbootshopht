@@ -14,7 +14,7 @@ public class ShuxingValueServiceImpl implements ShuxingValueService {
     private ShuxingValueDao shuxingValueDao;
 
     @Override
-    public List<ShuxingValue> getData() {
-        return shuxingValueDao.getData();
+    public List<ShuxingValue> getData(Integer attId) {
+        return shuxingValueDao.getData(attId);
     }
 }
