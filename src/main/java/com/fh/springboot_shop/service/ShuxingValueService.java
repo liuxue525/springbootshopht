@@ -10,4 +10,6 @@ public interface ShuxingValueService {
     void add(ShuxingValue shuxingValue);
 
     ShuxingValue selectValueById(Integer id);
+
+    void update(ShuxingValue shuxingValue);
 }

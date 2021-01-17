@@ -33,5 +33,11 @@ public class ShuxingValueController {
         return ResultData.success(s);
     }
 
+    @PostMapping("update")
+    public ResultData update(ShuxingValue shuxingValue){
+        shuxingValueService.update(shuxingValue);
+        return ResultData.success(null);
+    }
+
 
 }
