@@ -35,4 +35,8 @@
         update shop_pinpai set name=#{name},bandE=#{bandE},imgPath=#{imgPath},bandDesc=#{bandDesc},ord=#{ord},isDel=#{isDel},updateDate=SYSDATE()
         where id=#{id}
     </update>
+
+    <select id="selectPinpaiName" resultType="com.fh.springboot_shop.entity.po.Pinpai">
+        select * from shop_pinpai
+    </select>
 </mapper>

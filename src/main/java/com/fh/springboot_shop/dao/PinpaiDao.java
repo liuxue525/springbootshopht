@@ -15,4 +15,6 @@ public interface PinpaiDao {
     Pinpai selectPinpaiById(Integer id);
 
     void update(Pinpai pinpai);
+
+    List<Pinpai> selectPinpaiName();
 }

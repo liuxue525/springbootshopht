@@ -51,4 +51,9 @@ public class PinpaiServiceImpl implements PinpaiService {
     public void update(Pinpai pinpai) {
         pinpaiDao.update(pinpai);
     }
+
+    @Override
+    public List<Pinpai> selectPinpaiName() {
+        return pinpaiDao.selectPinpaiName();
+    }
 }

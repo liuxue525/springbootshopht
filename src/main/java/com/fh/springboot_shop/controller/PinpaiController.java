@@ -15,6 +15,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -34,6 +35,12 @@ public class PinpaiController {
         Map rs = pinpaiService.selectPinpai(param);
 
         return ResultData.success(rs);
+    }
+
+    @GetMapping("selectPinpaiName")
+    public ResultData selectPinpaiName(){
+        List<Pinpai> pinpaiList = pinpaiService.selectPinpaiName();
+        return ResultData.success(pinpaiList);
     }
 
     @PostMapping("add")
