@@ -58,8 +58,13 @@ public class ShuxingServiceImpl implements ShuxingService {
     }
 
     @Override
-    public Shuxing selectShuxingById(Integer id) {
-        return shuxingDao.selectShuxingById(id);
+    public List<Shuxing> selectShuxingById(Integer typeId) {
+        return shuxingDao.selectShuxingById(typeId);
+    }
+
+    @Override
+    public Shuxing selectSxById(Integer id) {
+        return shuxingDao.selectSxById(id);
     }
 
 

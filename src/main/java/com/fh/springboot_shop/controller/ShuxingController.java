@@ -56,9 +56,15 @@ public class ShuxingController {
         return ResultData.success(name);
     }
 
+    @GetMapping("selectShuxingBytypeId")
+    public ResultData selectShuxingById(Integer typeId){
+        List<Shuxing> shuxing = shuxingService.selectShuxingById(typeId);
+        return ResultData.success(shuxing);
+    }
+
     @PostMapping("selectShuxingById")
-    public ResultData selectShuxingById(Integer id){
-        Shuxing shuxing = shuxingService.selectShuxingById(id);
+    public ResultData selectSxById(Integer id){
+        Shuxing shuxing = shuxingService.selectSxById(id);
         return ResultData.success(shuxing);
     }
 }

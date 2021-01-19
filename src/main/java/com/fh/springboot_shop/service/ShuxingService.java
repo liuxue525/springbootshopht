@@ -20,5 +20,7 @@ public interface ShuxingService {
 
     List<ShopType> selectTypeName();
 
-    Shuxing selectShuxingById(Integer id);
+    List<Shuxing> selectShuxingById(Integer typeId);
+
+    Shuxing selectSxById(Integer id);
 }
