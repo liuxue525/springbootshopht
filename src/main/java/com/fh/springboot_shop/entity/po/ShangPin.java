@@ -13,11 +13,15 @@ public class ShangPin {
 
     private Integer bandId;
 
+    private Integer typeId;
+
     private String productdecs;
 
     private Double price;
 
     private Integer stocks;
+
+    private String imgPath;
 
     private Integer sortNum;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -61,6 +65,14 @@ public class ShangPin {
         this.bandId = bandId;
     }
 
+    public Integer getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
+    }
+
     public String getProductdecs() {
         return productdecs;
     }
@@ -83,6 +95,14 @@ public class ShangPin {
 
     public void setStocks(Integer stocks) {
         this.stocks = stocks;
+    }
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
     }
 
     public Integer getSortNum() {

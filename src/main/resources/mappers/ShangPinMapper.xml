@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fh.springboot_shop.dao.ShangPinDao">
+
+    <select id="selectShangPinCount" resultType="java.lang.Integer">
+        select count(*) from shop_shangpin where 1=1
+        <if test="name!=null and name!=''">
+            and name LIKE '%${name}%'
+
+        </if>
+        and isDel = 0
+
+    </select>
+
+    <select id="selectShangPinByPage" resultType="com.fh.springboot_shop.entity.po.ShangPin">
+        select * from shop_shangpin where 1=1
+        <if test="name!=null and name!=''">
+            and name LIKE '%${name}%'
+        </if>
+        and isDel = 0 limit ${size*(page-1)},#{size}
+    </select>
+</mapper>
